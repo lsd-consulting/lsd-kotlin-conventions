@@ -91,6 +91,19 @@ publishing {
     }
 }
 
+// Fix the groupId for plugin marker publications after they're created
+afterEvaluate {
+    publishing {
+        publications {
+            withType<MavenPublication> {
+                if (name.endsWith("PluginMarkerMaven")) {
+                    groupId = "io.github.lsd-consulting" 
+                }
+            }
+        }
+    }
+}
+
 signing {
     if (project.findProperty("signingKey") != null) {
         // Use in-memory ascii-armored keys
