@@ -41,10 +41,14 @@ gradlePlugin {
         create("lsdLibrary") {
             id = "lsd.library"
             implementationClass = "lsd.conventions.LsdLibraryPlugin"
+            displayName = "LSD Library Plugin"
+            description = "Base conventions for LSD Java libraries"
         }
         create("lsdKotlinLibrary") {
             id = "lsd.kotlin-library"
             implementationClass = "lsd.conventions.LsdKotlinLibraryPlugin"
+            displayName = "LSD Kotlin Library Plugin"
+            description = "Extended conventions for LSD Kotlin libraries with Dokka and JaCoCo"
         }
     }
 }
