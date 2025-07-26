@@ -1,6 +1,6 @@
 # LSD Kotlin Conventions
 
-A Gradle convention plugin for standardizing build configurations across LSD projects.
+Gradle convention plugins for LSD projects.
 
 ## Overview
 
@@ -9,39 +9,30 @@ This project provides Gradle convention plugins that encapsulate common build lo
 ## Plugins
 
 ### `lsd.library`
-Basic Java library conventions including:
-- Java 17 compatibility
-- Maven Central repository
+Base plugin for Java libraries with:
+- Java 17 toolchain
+- Maven Central publishing
 - Common test dependencies (JUnit 5, AssertJ)
 - Test configuration with proper logging
 
 ### `lsd.kotlin-library`
-Kotlin library conventions (extends `lsd.library`) including:
+Extends `lsd.library` with Kotlin-specific features:
 - Kotlin JVM plugin with Java 17 toolchain
-- Dokka for documentation generation
-- JaCoCo for code coverage (version 0.8.12)
+- Dokka documentation generation
+- JaCoCo test coverage
 - Sources and Javadoc JAR generation
 - Git hooks installation task
 
 ## Usage
 
-### In your `settings.gradle` or `settings.gradle.kts`:
+### In your `settings.gradle.kts`:
 
 ```kotlin
 pluginManagement {
     repositories {
-        mavenLocal()
         gradlePluginPortal()
         mavenCentral()
     }
-}
-```
-
-### In your `build.gradle`:
-
-```groovy
-plugins {
-    id 'lsd.kotlin-library' version '1.0.0'
 }
 ```
 
@@ -50,6 +41,14 @@ plugins {
 ```kotlin
 plugins {
     id("lsd.kotlin-library") version "1.0.0"
+}
+```
+
+### For Java-only projects:
+
+```kotlin
+plugins {
+    id("lsd.library") version "1.0.0"
 }
 ```
 
