@@ -1,0 +1,26 @@
+# This workflow will build a Gradle project then perform an automated release
+# For more information see:
+#  https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
+#  https://github.com/marketplace/actions/action-for-semantic-release
+
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    uses: lsd-consulting/shared-workflows/.github/workflows/build.yml@main
+    with:
+      java-version: '17'
+      codecov: true
+    secrets: inherit
+  release:
+    needs: build
+    uses: lsd-consulting/shared-workflows/.github/workflows/release.yml@main
+    with:
+      java-version: '17'
+    secrets: inherit

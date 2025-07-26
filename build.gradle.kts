@@ -1,7 +1,7 @@
 plugins {
     `kotlin-dsl`
     `maven-publish`
-    // signing // Temporarily disabled for local testing
+    signing
     id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
     id("com.palantir.git-version") version "4.0.0"
 }
@@ -95,13 +95,11 @@ publishing {
     }
 }
 
-// Signing temporarily disabled for local testing
-/*
 signing {
     if (project.findProperty("signingKey") != null) {
         // Use in-memory ascii-armored keys
-        val signingKey: String? by project
-        val signingPassword: String? by project
+        val signingKey: String? = findProperty("signingKey") as String?
+        val signingPassword: String? = findProperty("signingPassword") as String?
         useInMemoryPgpKeys(signingKey, signingPassword)
         sign(publishing.publications)
     } else {
@@ -109,7 +107,6 @@ signing {
         sign(publishing.publications)
     }
 }
-*/
 
 nexusPublishing {
     repositories {
