@@ -1,5 +1,6 @@
 plugins {
     `kotlin-dsl`
+    `java-gradle-plugin`
     `maven-publish`
     signing
     id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
@@ -93,29 +94,21 @@ publishing {
     }
 }
 
-// Fix the groupId for plugin marker publications after they're created
-afterEvaluate {
-    publishing {
-        publications {
-            withType<MavenPublication> {
-                if (name.endsWith("PluginMarkerMaven")) {
-                    groupId = "io.github.lsd-consulting" 
-                }
-            }
-        }
-    }
-}
 
 signing {
-    if (project.findProperty("signingKey") != null) {
+    val signingKey: String? = findProperty("signingKey") as String?
+    val signingPassword: String? = findProperty("signingPassword") as String?
+    val signingKeyId: String? = findProperty("signing.keyId") as String?
+    
+    if (signingKey != null && signingPassword != null) {
         // Use in-memory ascii-armored keys
-        val signingKey: String? = findProperty("signingKey") as String?
-        val signingPassword: String? = findProperty("signingPassword") as String?
         useInMemoryPgpKeys(signingKey, signingPassword)
         sign(publishing.publications)
-    } else {
+    } else if (signingKeyId != null && findProperty("signing.password") != null) {
         // Use signing properties in ~/.gradle/gradle.properties
         sign(publishing.publications)
+    } else {
+        logger.lifecycle("Signing disabled - no valid signing configuration found")
     }
 }
 
