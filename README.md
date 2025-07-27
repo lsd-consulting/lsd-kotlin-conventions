@@ -1,3 +1,8 @@
+[![semantic-release](https://img.shields.io/badge/semantic-release-e10079.svg?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
+[![CI](https://github.com/lsd-consulting/lsd-kotlin-conventions/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/lsd-consulting/lsd-kotlin-conventions/actions/workflows/ci.yml)
+[![GitHub release](https://img.shields.io/github/release/lsd-consulting/lsd-kotlin-conventions)](https://github.com/lsd-consulting/lsd-kotlin-conventions/releases)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.lsd-consulting/lsd.kotlin-library.gradle.plugin.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.lsd-consulting%22%20AND%20a:%22lsd.kotlin-library.gradle.plugin%22)
+
 # LSD Kotlin Conventions
 
 Gradle convention plugins for LSD projects.
