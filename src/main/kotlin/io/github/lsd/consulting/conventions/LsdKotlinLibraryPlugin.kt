@@ -1,4 +1,4 @@
-package lsd.conventions
+package io.github.lsd.consulting.conventions
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project

@@ -42,14 +42,14 @@ dependencies {
 gradlePlugin {
     plugins {
         create("lsdLibrary") {
-            id = "lsd.library"
-            implementationClass = "lsd.conventions.LsdLibraryPlugin"
+            id = "io.github.lsd-consulting.library"
+            implementationClass = "io.github.lsd.consulting.conventions.LsdLibraryPlugin"
             displayName = "LSD Library Plugin"
             description = "Base conventions for LSD Java libraries"
         }
         create("lsdKotlinLibrary") {
-            id = "lsd.kotlin-library"
-            implementationClass = "lsd.conventions.LsdKotlinLibraryPlugin"
+            id = "io.github.lsd-consulting.kotlin-library"
+            implementationClass = "io.github.lsd.consulting.conventions.LsdKotlinLibraryPlugin"
             displayName = "LSD Kotlin Library Plugin"
             description = "Extended conventions for LSD Kotlin libraries with Dokka and JaCoCo"
         }
