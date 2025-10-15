@@ -18,7 +18,7 @@ class LsdKotlinLibraryPlugin : Plugin<Project> {
         with(project) {
             plugins.apply(LsdLibraryPlugin::class.java)
             plugins.apply(KotlinPluginWrapper::class.java)
-            plugins.apply("org.jetbrains.dokka")
+            plugins.apply("org.jetbrains.dokka-javadoc")
             plugins.apply(JacocoPlugin::class.java)
 
             repositories.add(repositories.mavenLocal())
@@ -57,9 +57,9 @@ class LsdKotlinLibraryPlugin : Plugin<Project> {
             }
 
             tasks.register("javadocJar", Jar::class.java) {
-                dependsOn(tasks.named("dokkaJavadoc"))
+                dependsOn(tasks.named("dokkaGeneratePublicationJavadoc"))
                 archiveClassifier.set("javadoc")
-                from(tasks.named("dokkaHtml"))
+                from(layout.buildDirectory.dir("dokka/javadoc"))
             }
 
             // Git hooks task

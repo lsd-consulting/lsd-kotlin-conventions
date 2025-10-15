@@ -32,6 +32,7 @@ repositories {
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.10")
     implementation("org.jetbrains.dokka:dokka-gradle-plugin:2.0.0")
+    implementation("org.jetbrains.dokka:javadoc-plugin:2.0.0")
     implementation("io.github.gradle-nexus:publish-plugin:2.0.0")
     implementation("com.palantir.gradle.gitversion:gradle-git-version:4.0.0")
     implementation("org.springframework.boot:spring-boot-gradle-plugin:3.5.5")

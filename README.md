@@ -1,7 +1,7 @@
 [![semantic-release](https://img.shields.io/badge/semantic-release-e10079.svg?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 [![CI](https://github.com/lsd-consulting/lsd-kotlin-conventions/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/lsd-consulting/lsd-kotlin-conventions/actions/workflows/ci.yml)
 [![GitHub release](https://img.shields.io/github/release/lsd-consulting/lsd-kotlin-conventions)](https://github.com/lsd-consulting/lsd-kotlin-conventions/releases)
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.lsd-consulting/lsd.kotlin-library.gradle.plugin.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.lsd-consulting%22%20AND%20a:%22lsd.kotlin-library.gradle.plugin%22)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.lsd-consulting/lsd.kotlin-library.gradle.plugin.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.lsd-consulting%22%20AND%20a:%22io.github.lsd-consulting.kotlin-library.gradle.plugin%22)
 
 # LSD Kotlin Conventions
 
@@ -13,15 +13,14 @@ This project provides Gradle convention plugins that encapsulate common build lo
 
 ## Plugins
 
-### `lsd.library`
+### `library`
 Base plugin for Java libraries with:
 - Java 17 toolchain
-- Maven Central publishing
 - Common test dependencies (JUnit 5, AssertJ)
 - Test configuration with proper logging
 
-### `lsd.kotlin-library`
-Extends `lsd.library` with Kotlin-specific features:
+### `kotlin-library`
+Extends `library` with Kotlin-specific features:
 - Kotlin JVM plugin with Java 17 toolchain
 - Dokka documentation generation
 - JaCoCo test coverage
@@ -45,7 +44,7 @@ pluginManagement {
 
 ```kotlin
 plugins {
-    id("lsd.kotlin-library") version "1.0.0"
+    id('io.github.lsd-consulting.kotlin-library') version '1.1.4'
 }
 ```
 
@@ -53,7 +52,7 @@ plugins {
 
 ```kotlin
 plugins {
-    id("lsd.library") version "1.0.0"
+    id('io.github.lsd-consulting.library') version '1.1.4'
 }
 ```
 
