@@ -4,7 +4,7 @@ plugins {
     `maven-publish`
     signing
     id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
-    id("com.palantir.git-version") version "4.1.0"
+    id("com.palantir.git-version") version "4.2.0"
 }
 
 group = "io.github.lsd-consulting"
