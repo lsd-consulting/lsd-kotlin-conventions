@@ -35,7 +35,7 @@ dependencies {
     implementation("org.jetbrains.dokka:javadoc-plugin:2.1.0")
     implementation("io.github.gradle-nexus:publish-plugin:2.0.0")
     implementation("com.palantir.gradle.gitversion:gradle-git-version:4.2.0")
-    implementation("org.springframework.boot:spring-boot-gradle-plugin:3.5.7")
+    implementation("org.springframework.boot:spring-boot-gradle-plugin:3.5.8")
     implementation("io.spring.gradle:dependency-management-plugin:1.1.7")
     implementation("org.jetbrains.kotlin:kotlin-allopen:2.2.21")
 }
