@@ -1,6 +1,7 @@
 package io.github.lsd.consulting.conventions
 
 import org.gradle.api.Plugin
+import org.gradle.api.tasks.Exec
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.api.tasks.bundling.Jar
@@ -62,14 +63,12 @@ class LsdKotlinLibraryPlugin : Plugin<Project> {
                 from(layout.buildDirectory.dir("dokka/javadoc"))
             }
 
-            // Git hooks task
-            tasks.register("installGitHooks") {
+            // Git hooks task (Exec task — Project.exec removed/unusable from Kotlin plugins on Gradle 9)
+            tasks.register("installGitHooks", Exec::class.java) {
                 shouldRunAfter("clean")
-                doLast {
+                commandLine("git", "config", "core.hooksPath", ".githooks")
+                doFirst {
                     println("-- Configuring git to use .githooks --")
-                    project.exec {
-                        commandLine("git", "config", "core.hooksPath", ".githooks")
-                    }
                 }
             }
         }
