@@ -17,8 +17,8 @@ class LsdLibraryPlugin : Plugin<Project> {
             repositories.add(repositories.mavenCentral())
 
             extensions.configure(JavaPluginExtension::class.java) {
-                sourceCompatibility = JavaVersion.VERSION_17
-                targetCompatibility = JavaVersion.VERSION_17
+                sourceCompatibility = JavaVersion.VERSION_21
+                targetCompatibility = JavaVersion.VERSION_21
             }
 
             dependencies.apply {

@@ -25,13 +25,13 @@ class LsdKotlinLibraryPlugin : Plugin<Project> {
             repositories.add(repositories.mavenLocal())
 
             extensions.configure(KotlinJvmProjectExtension::class.java) {
-                jvmToolchain(17)
+                jvmToolchain(21)
             }
 
             // Configure modern Kotlin compiler options for Gradle 8.x+
             tasks.withType(KotlinCompile::class.java) {
                 compilerOptions {
-                    jvmTarget.set(JvmTarget.JVM_17)
+                    jvmTarget.set(JvmTarget.JVM_21)
                 }
             }
 

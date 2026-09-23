@@ -15,13 +15,13 @@ This project provides Gradle convention plugins that encapsulate common build lo
 
 ### `library`
 Base plugin for Java libraries with:
-- Java 17 toolchain
+- Java 21 toolchain
 - Common test dependencies (JUnit 5, AssertJ)
 - Test configuration with proper logging
 
 ### `kotlin-library`
 Extends `library` with Kotlin-specific features:
-- Kotlin JVM plugin with Java 17 toolchain
+- Kotlin JVM plugin with Java 21 toolchain
 - Dokka documentation generation
 - JaCoCo test coverage
 - Sources and Javadoc JAR generation
