@@ -44,7 +44,7 @@ pluginManagement {
 
 ```kotlin
 plugins {
-    id('io.github.lsd-consulting.kotlin-library') version '1.1.4'
+    id('io.github.lsd-consulting.kotlin-library') version '<version>'
 }
 ```
 
@@ -52,7 +52,7 @@ plugins {
 
 ```kotlin
 plugins {
-    id('io.github.lsd-consulting.library') version '1.1.4'
+    id('io.github.lsd-consulting.library') version '<version>'
 }
 ```
 
