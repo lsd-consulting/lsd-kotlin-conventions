@@ -4,7 +4,7 @@ plugins {
     `maven-publish`
     signing
     id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
-    id("com.palantir.git-version") version "5.1.0"
+    id("com.palantir.git-version") version "5.2.0"
 }
 
 group = "io.github.lsd-consulting"
@@ -34,7 +34,7 @@ dependencies {
     implementation("org.jetbrains.dokka:dokka-gradle-plugin:2.3.0")
     implementation("org.jetbrains.dokka:javadoc-plugin:2.3.0")
     implementation("io.github.gradle-nexus:publish-plugin:2.0.0")
-    implementation("com.palantir.gradle.gitversion:gradle-git-version:5.1.0")
+    implementation("com.palantir.gradle.gitversion:gradle-git-version:5.2.0")
     implementation("org.springframework.boot:spring-boot-gradle-plugin:4.1.2")
     implementation("io.spring.gradle:dependency-management-plugin:1.1.7")
     implementation("org.jetbrains.kotlin:kotlin-allopen:2.4.21")
